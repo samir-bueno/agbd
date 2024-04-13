@@ -26,7 +26,33 @@ join departments d on e.department_id = d.department_id
 order by e.first_name and d.department_name
 
 -- EJercicio 7
---sin resolver hasta la actividad 10
+select e.first_name, l.state_province from employees e
+join departments d on e.department_id = d.department_id 
+join locations l on d.location_id = l.location_id
+order by e.first_name
+
+-- EJercicio 8
+SELECT e.first_name, e.last_name, country_name, region_name from employees e
+JOIN departments d ON e.department_id = d.department_id
+JOIN locations l ON d.location_id = l.location_id
+JOIN countries c ON l.country_id = c.country_id
+JOIN regions r ON c.region_id = r.region_id
+order by e.first_name
+
+-- EJercicio 9
+select c.country_name, r.region_name from countries c
+join regions r on c.region_id = r.region_id
+order by c.country_name DESC
+
+-- Ejercicio 10
+select e.first_name, j.job_title, j.min_salary from employees e
+join jobs j on e.job_id = j.job_id
+ORDER by j.min_salary
+
+
+
+
+
 
 
 
