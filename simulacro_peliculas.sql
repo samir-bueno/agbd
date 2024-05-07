@@ -28,10 +28,30 @@ GROUP BY co.country
 HAVING ciudades > 2
 order by ciudades DESC
 
---Ejerccio 7
+--Ejercicio 7
 select min(rental_date) as fecha_minima, max(rental_date) as fecha_ultima from rental where return_date is not null
 
---falta e8, 9, 10
+--Ejercicio 8
+select f.title as titulo, count(a.first_name) as actores from film f
+join film_actor fi on f.film_id = fi.film_id
+join actor a on fi.actor_id = a.actor_id
+GROUP by titulo
+order by actores ASC
+limit 10
+
+--Ejercicio 9
+SELECT title as titulo, rental_rate as alquilar from film
+order by alquilar DESC
+limit 1 OFFSET 2
+
+--Ejercicio 10
+SELECT f.title as nombre_pelicula, avg(a.first_name) as promedio_actores, count(a.first_name) as cant_actores, f.rental_duration as duracion_pelis from actor a
+join film_actor fi on a.actor_id = fi.actor_id
+join film f on fi.film_id = f.film_id
+where duracion_pelis >= 2 and duracion_pelis <= 4
+group by nombre_pelicula
+order by duracion_pelis DESC
+
 
 
 
