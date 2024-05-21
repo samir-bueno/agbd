@@ -7,11 +7,11 @@
 -- menos de 4 autos
 
 
-SELECT p.name, i.annual_income, dl.car_make, count(dl.car_model) as cant_autos from drivers_license dl
+SELECT dl.car_make, dl.car_model, count(dl.car_model) as cant_autos from drivers_license dl
 join person p on dl.id = p.license_id
 join income i on p.ssn = i.ssn
 where annual_income < 35000 
-GROUP by dl.car_make
+GROUP by dl.car_make, dl.car_model
 having  cant_autos >= 4
 order by cant_autos DESC
 
