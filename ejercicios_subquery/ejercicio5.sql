@@ -1,2 +1,3 @@
-update employees set ReportsTo = 3 
-where EmployeeId = 1
+UPDATE employees
+set ReportsTo = EmployeeId
+where Title = "General Manager"s
