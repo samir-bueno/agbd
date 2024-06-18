@@ -7,6 +7,7 @@ VALUES("Africa"),("Middle east")
 --AFRICA: EGIPTO, NIGERIA, ZAMBIA, ZIMBABWE
 --MEDIO-ORIENTE: ISRAEL, KUWAIT
 
+UPDATE countries
 SET region_id = 5
 where country_id = "EG" or country_id = "NG" or country_id = "ZM" or country_id = "ZW";
 
